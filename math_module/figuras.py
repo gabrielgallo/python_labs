@@ -9,6 +9,8 @@ class Figura:
         return {"name": self.name}
 
 
+
+
 class Poligono(Figura):
     lados = []
 
@@ -24,12 +26,13 @@ class Poligono(Figura):
 
 class Cuadrado(Poligono):
     def __init__(self,name, lado):
-        super(Cuadrado, self).__init__(name, ([lado]*4))
+        lados = [lado]*4
+        super(Cuadrado, self).__init__(name, lados)
 
 
 if __name__ == "__main__":
     #figura = Figura("Cuadrado 1")
-    #figura = Poligono("Cuadrado 2", 2.3, 2.3, 2.3, 2.3)
+    #figura = Poligono("Cuadrado 2",[ 2.3, 2.3, 2.3, 2.3])
     figura = Cuadrado("Cuadrado 3", 2.3)
     print(figura.description())
     print(f'Perímetro {figura.perimetro()}')
